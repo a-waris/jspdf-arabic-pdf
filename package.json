@@ -1,0 +1,11 @@
+{
+  "name": "arabic-jspdf-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "jspdf": "^2.5.1"
+  },
+  "scripts": {
+    "start": "open index.html"
+  }
+}

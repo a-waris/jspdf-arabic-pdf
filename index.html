@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic jsPDF Example</title>
+    <script src="node_modules/jspdf/dist/jspdf.umd.min.js"></script>
+    <script src="arabic-font.js"></script>
+</head>
+<body>
+    <button onclick="generatePDF()">Generate PDF</button>
+
+    <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            var doc = new jsPDF();
+            doc.addFileToVFS("Arabic-Regular.ttf", arabicFontBase64);  // Assume arabicFontBase64 is the base64 string of your font from arabic-font.js
+            doc.addFont("Arabic-Regular.ttf", "Arabic", "normal");
+            doc.setFont("Arabic"); 
+            doc.text('مرحبا بكم في jsPDF!', 10, 10);
+            doc.save('test.pdf');
+        }
+    </script>
+</body>
+</html>
